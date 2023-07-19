@@ -33,7 +33,7 @@ namespace MarsQA_1.Helpers
         public static void TurnOnWait()
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
         }
 
         public static void NavigateUrl()
@@ -45,6 +45,7 @@ namespace MarsQA_1.Helpers
         public void Close()
         {
             driver.Quit();
+            driver.Dispose();
         }
 
     }
